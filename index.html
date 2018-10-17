@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="./static/css/mobile.css">
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_793194_z2ppfu6prro.css">
+  <title>vue-demo</title>
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!--引入 webim sdk-->
+  <script type="text/javascript" src="./static/sdk/webim.js"></script>
+  <script type="text/javascript" src="./static/sdk/json2.js"></script>
+  <!--webim demo js-->
+  <script type="text/javascript" src="./static/js/common/msgCommon.js"></script>
+  <script type="text/javascript" src="./static/js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="./static/js/bootstrap.js"></script>
+  <!-- 引入发送图片和文件 js-->
+  <script type="text/javascript" src="./static/js/common/upload_and_send_pic_msg.js"></script>
+  <script type="text/javascript" src="./static/js/common/upload_and_send_file_msg.js"></script>
+  <!-- 引入登录登出 js -->
+  <script type="text/javascript" src="./static/js/login/login.js"></script>
+  <!-- 引入群聊事件 包括进群退群及收发消息 -->
+  <script src="./static/js/groupchatpack.js"></script>
+  <!-- <script type="text/javascript" src="./static/js/group/groupchat.js"></script> -->
+  <!-- 引入私聊事件 -->
+  <script type="text/javascript" src="./static/js/c2c/privatechat.js"></script>
+  <!-- md5发送图片 -->
+  <script type="text/javascript" src="./static/js/spark-md5.js"></script>
+  <script type="text/javascript">
+    //账号模式  0 表示独立模式
+    var accountMode = 0;
+    var sdkAppID = 1400119988;
+    //监听事件
+    var listeners = {
+      "jsonpCallback": jsonpCallback, //IE9(含)以下浏览器用到的jsonp回调函数,移动端可不填，pc端必填
+      "onBigGroupMsgNotify": onBigGroupMsgNotify, //监听新消息(大群)事件，必填
+      "onMsgNotify": onMsgNotify,//监听私聊新消息
+    };
+    var options = {};
+    var avChatRoomId = "MyGroup";
+    var URL = window.location.href;
+    var host = window.location.host;
+    var selType = "";//当前聊天类型
+    if(URL == "http://"+host+"/privatechat"){
+      selType = webim.SESSION_TYPE.C2C;
+      var selToID = sessionStorage.getItem('selToID');//当前选中聊天id（当聊天类型为私聊时，该值为好友帐号，否则为群号）
+    }else if(URL == "http://"+host+"/groupchat"){
+      selType = webim.SESSION_TYPE.GROUP;
+      var selToID = avChatRoomId;
+    }
+    // var selType = webim.SESSION_TYPE.GROUP;//当前聊天类型
+    
+    var selSess = null;//当前聊天会话对象
+    //默认群组头像(选填)
+    var selSessHeadUrl = 'img/2017.jpg';
+    var infoMap = {};
+  </script>
+</body>
+
+</html>

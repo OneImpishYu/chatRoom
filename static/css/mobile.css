@@ -1,0 +1,247 @@
+@charset "utf-8";
+html {
+    font-family: PingFangSC-Light, HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font-size: 14px
+}
+ol, ul {
+    padding: 0
+}
+
+body {
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0
+}
+
+
+li {
+    list-style-type: none
+}
+
+button, input, option, select, textarea {
+    font: inherit;
+    outline: 0;
+    -webkit-appearance: none;
+    border: 0
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+
+a {
+    -webkit-touch-callout: none;
+    text-decoration: none
+}
+
+em, i {
+    font-style: normal
+}
+
+.user-icon-fans {
+    background: url(../../src/assets/img/visitor_white.png) no-repeat
+}
+
+.user-icon-like {
+    background: url(../../src/assets/img/like_white.png) no-repeat;
+    margin-left: 10px
+}
+
+.user-icon-fans, .user-icon-like {
+    background-size: 11px 10px;
+    width: 11px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 2px
+}
+
+.video-discuss {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.video-sms-list {
+    color: #fff;
+    margin: 0 15px
+}
+
+.video-sms-list li {
+    margin-bottom: 5px
+}
+
+.video-sms-list li:nth-child(1) {
+    opacity: .4
+}
+
+.video-sms-list li:nth-child(2) {
+    opacity: .6
+}
+
+.video-sms-list li:nth-child(3) {
+    opacity: .8
+}
+
+.video-sms-pane {
+    display: inline-block
+}
+
+.video-sms-text {
+    padding: 2px 10px;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 500px;
+    line-height: 18px;
+    color: #000;
+    word-wrap: break-word
+}
+
+.video-sms-text span {
+    padding-right: 10px;
+    vertical-align: top;
+    color: #000
+}
+
+.video-sms-text span.user-name-green {
+    color: #1fbcb6
+}
+
+.video-sms-text span.user-name-red {
+    color: #f12b5b
+}
+
+.video-sms-text span.user-name-blue {
+    color: #2b84f1
+}
+
+.video-sms-text span.user-name-org {
+    color: #ff7906
+}
+
+.video-discuss-tool {
+    margin: 25px 15px 15px
+}
+
+.like-icon {
+    background: url(../../src/assets/img/like_icon_1.png) no-repeat;
+    background-size: 19px 17px;
+    width: 19px;
+    height: 17px;
+    position: absolute;
+    right: 24px;
+    margin-top: -15px;
+    opacity: 0;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.like-icon.green {
+    background-image: url(../../src/assets/img/like_icon_2.png)
+}
+
+.like-icon.blue {
+    background-image: url(../../src/assets/img/like_icon_3.png)
+}
+
+.like-icon.red {
+    background-image: url(../../src/assets/img/like_icon_4.png)
+}
+
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        margin-top: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        margin-top: -60px;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+        margin-top: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+        margin-top: -60px;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn
+}
+
+#MAXIM {
+    content: "tig201605241501026"
+}
+
+#login_dialog{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+.login_dialog_p{display: inline-block;color: #fff;text-align: right;width: 54px;}
+
+#login_dialog_all{margin-top: 200px;margin-left: 50px;}
+
+.install_div{margin:10px;}
+.install_div input{padding: 5px;width: 60%;}
+.install_button_div{width:100%;text-align: center;}
+.install_button_div button{color: #fff;border-radius: 4px;background: red;padding: 4px 20px;}
+
+
+.chat02_title_btn {
+    cursor: pointer;
+    float: left;
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 5px 6px;
+}
+.msgflow {
+    width: 100%;
+    height: 100%;
+    border: 1px rgb(181, 178, 178) solid;
+    padding: 20px 6px 0 6px;
+    background: #f5f5f5;
+    overflow: auto;
+}
+.msgflow .onemsg{position:relative;}
+.msgflow .onemsg .msghead {
+    color: green;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+.msgflow .onemsg .msgbody {
+    margin: 0 0 0 18px;
+    line-height: 13px;
+    font-size: 14px;
+}
